@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E942F985-D85F-4997-B35C-7BCB3211629F}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SSCOUIViews</RootNamespace>
+    <AssemblyName>SSCOUIViews</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+    <ReferencePath>C:\scot\ADK\lib\release13\</ReferencePath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommandProxy">
+      <HintPath>..\..\..\lib\release13\CommandProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="FPsxWPF">
+      <HintPath>..\..\..\lib\release13\FPsxWPF.dll</HintPath>
+    </Reference>
+    <Reference Include="PsxNet">
+      <HintPath>..\..\..\..\Bin\PsxNet.dll</HintPath>
+    </Reference>
+    <Reference Include="RPSWNET">
+      <HintPath>..\..\..\..\Bin\RPSWNET.dll</HintPath>
+    </Reference>
+    <Reference Include="SSCOControls">
+      <HintPath>..\..\..\lib\release13\SSCOControls.dll</HintPath>
+    </Reference>
+    <Reference Include="SSCOUIModels, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\release13\SSCOUIModels.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\AlphaNumericKeyboard.xaml.cs">
+      <DependentUpon>AlphaNumericKeyboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Card.xaml.cs">
+      <DependentUpon>Card.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CardMessage.xaml.cs">
+      <DependentUpon>CardMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CartControl.xaml.cs">
+      <DependentUpon>CartControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CartListItem.xaml.cs">
+      <DependentUpon>CartListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CurrencyCylinder.xaml.cs">
+      <DependentUpon>CurrencyCylinder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DecoratorControl.xaml.cs">
+      <DependentUpon>DecoratorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DueAndPaid.xaml.cs">
+      <DependentUpon>DueAndPaid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ExtendedCartControl.xaml.cs">
+      <DependentUpon>ExtendedCartControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ExtendedHeaderControl.xaml.cs">
+      <DependentUpon>ExtendedHeaderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HeaderControl.xaml.cs">
+      <DependentUpon>HeaderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NumericKeypad.xaml.cs">
+      <DependentUpon>NumericKeypad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SignatureCapture.xaml.cs">
+      <DependentUpon>SignatureCapture.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SystemFunctionsControl.xaml.cs">
+      <DependentUpon>SystemFunctionsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Views\AlphaNumericInput.xaml.cs">
+      <DependentUpon>AlphaNumericInput.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\CancelYesNo.xaml.cs">
+      <DependentUpon>CancelYesNo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashManagementConfirmAction.xaml.cs">
+      <DependentUpon>CashManagementConfirmAction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExtendedPopup.cs">
+      <DependentUpon>ExtendedPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StoreMode.xaml.cs">
+      <DependentUpon>StoreMode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StoreModeFullAssist.xaml.cs">
+      <DependentUpon>StoreModeFullAssist.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomPopup.xaml.cs">
+      <DependentUpon>CustomPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StoreModeWithList.xaml.cs">
+      <DependentUpon>StoreModeWithList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StoreModeSignature.xaml.cs">
+      <DependentUpon>StoreModeSignature.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StoreModeWithImageVideo.xaml.cs">
+      <DependentUpon>StoreModeWithImageVideo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StoreModeWithKeypad.xaml.cs">
+      <DependentUpon>StoreModeWithKeypad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemMessage.xaml.cs">
+      <DependentUpon>SystemMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Finish.xaml.cs">
+      <DependentUpon>Finish.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GridInput.xaml.cs">
+      <DependentUpon>GridInput.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashManagement.xaml.cs">
+      <DependentUpon>CashManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VolumePopup.xaml.cs">
+      <DependentUpon>VolumePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Help.xaml.cs">
+      <DependentUpon>Help.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NMIPopup.xaml.cs">
+      <DependentUpon>NMIPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NumericInput.xaml.cs">
+      <DependentUpon>NumericInput.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OwnBag.xaml.cs">
+      <DependentUpon>OwnBag.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sale.xaml.cs">
+      <DependentUpon>Sale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Search.xaml.cs">
+      <DependentUpon>Search.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectLanguage.xaml.cs">
+      <DependentUpon>SelectLanguage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TenderOptions.xaml.cs">
+      <DependentUpon>TenderOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tender.xaml.cs">
+      <DependentUpon>Tender.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TenderStep.xaml.cs">
+      <DependentUpon>TenderStep.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Welcome.xaml.cs">
+      <DependentUpon>Welcome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GenericPopup.xaml.cs">
+      <DependentUpon>GenericPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StoreModeWithInfo.xaml.cs">
+      <DependentUpon>StoreModeWithInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\YesNo.xaml.cs">
+      <DependentUpon>YesNo.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\AlphaNumericKeyboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Card.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CardMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CartControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CartListItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CurrencyCylinder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\DecoratorControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\DueAndPaid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ExtendedCartControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ExtendedHeaderControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\HeaderControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\NumericKeypad.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\SignatureCapture.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\SystemFunctionsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+    <Page Include="Views\AlphaNumericInput.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CancelYesNo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CashManagementConfirmAction.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ExtendedPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\StoreMode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StoreModeFullAssist.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CustomPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StoreModeWithList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StoreModeSignature.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\StoreModeWithImageVideo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\StoreModeWithKeypad.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SystemMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Finish.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\GridInput.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CashManagement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\VolumePopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Help.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NMIPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NumericInput.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\OwnBag.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Sale.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\Search.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\SelectLanguage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TenderOptions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Tender.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\TenderStep.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\Welcome.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\GenericPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\StoreModeWithInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\YesNo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SSCOUISkin\SSCOUISkin.csproj">
+      <Project>{2a92587e-04c2-4c14-84c8-17724b11afa0}</Project>
+      <Name>SSCOUISkin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Q /Y "$(TargetPath)" "C:\scot\ADK\lib\release13"
+xcopy /Q /Y "$(TargetPath)" "C:\scot\bin"
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

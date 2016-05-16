@@ -1,0 +1,17 @@
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUIViews\SSCOUISkin\bin\Debug\SSCOUISkin.dll
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUIViews\SSCOUISkin\bin\Debug\SSCOUISkin.pdb
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUIViews\SSCOUISkin\bin\Debug\SSCOControls.dll
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUIViews\SSCOUISkin\bin\Debug\SSCOUIModels.dll
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUIViews\SSCOUISkin\bin\Debug\FPsxWPF.dll
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUIViews\SSCOUISkin\bin\Debug\CommandProxy.dll
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUIViews\SSCOUISkin\obj\Debug\Animations.baml
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUIViews\SSCOUISkin\obj\Debug\Icons.baml
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUIViews\SSCOUISkin\obj\Debug\SkinContent.baml
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUIViews\SSCOUISkin\obj\Debug\SkinDegraded.baml
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUIViews\SSCOUISkin\obj\Debug\SSCOUISkin_MarkupCompile.cache
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUIViews\SSCOUISkin\obj\Debug\SSCOUISkin.g.resources
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUIViews\SSCOUISkin\obj\Debug\SSCOUISkin.dll
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUIViews\SSCOUISkin\obj\Debug\SSCOUISkin.pdb
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUIViews\SSCOUISkin\obj\Debug\SSCOUISkin.csprojResolveAssemblyReference.cache
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUIViews\SSCOUISkin\bin\Debug\PsxNet.dll
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUIViews\SSCOUISkin\bin\Debug\RPSWNET.dll

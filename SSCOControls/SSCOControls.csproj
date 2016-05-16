@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{77C813C9-37F3-4858-97C8-498D764ABB90}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SSCOControls</RootNamespace>
+    <AssemblyName>SSCOControls</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ReferencePath>C:\scot\ADK\lib\release13\</ReferencePath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FPsxWPF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\release13\FPsxWPF.dll</HintPath>
+    </Reference>
+    <Reference Include="PsxNet">
+      <HintPath>..\..\..\..\bin\PsxNet.dll</HintPath>
+    </Reference>
+    <Reference Include="RPSWNET">
+      <HintPath>..\..\..\..\bin\RPSWNET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnimationControl.cs" />
+    <Compile Include="CommandBehavior\CommandBehavior.cs" />
+    <Compile Include="CommandBehavior\CommandBehaviorBinding.cs" />
+    <Compile Include="CommandBehavior\EventHandlerGenerator.cs" />
+    <Compile Include="ControlsAudio.cs" />
+    <Compile Include="DropShadowBorder.xaml.cs">
+      <DependentUpon>DropShadowBorder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementFlow\ElementFlow.cs" />
+    <Compile Include="ElementFlow\LayoutBase.cs" />
+    <Compile Include="ElementFlow\Motion.cs" />
+    <Compile Include="ElementFlow\Wall.cs" />
+    <Compile Include="FaderFrame.cs" />
+    <Compile Include="FadingScrollViewer.cs" />
+    <Compile Include="ImageButton.cs" />
+    <Compile Include="ImageToggleButton.cs" />
+    <Compile Include="ISupportUserInput.cs" />
+    <Compile Include="Localization\BindingLocalizedValue.cs" />
+    <Compile Include="Localization\FormattedLocalizedValue.cs" />
+    <Compile Include="Localization\LocalizationCallback.cs" />
+    <Compile Include="Localization\LocalizationCallbackReference.cs" />
+    <Compile Include="Localization\LocalizationManager.cs" />
+    <Compile Include="Localization\LocalizationScope.cs" />
+    <Compile Include="Localization\LocalizedDependencyProperty.cs" />
+    <Compile Include="Localization\LocalizedNonDependencyProperty.cs" />
+    <Compile Include="Localization\LocalizedProperty.cs" />
+    <Compile Include="Localization\LocalizedValue.cs" />
+    <Compile Include="Localization\LocBindingExtension.cs" />
+    <Compile Include="Localization\LocExtension.cs" />
+    <Compile Include="Localization\MethodLocalizedValue.cs" />
+    <Compile Include="Localization\ResourceFormattedLocalizedValue.cs" />
+    <Compile Include="Localization\ResourceLocalizedValue.cs" />
+    <Compile Include="Localization\ResourceManagerExtension.cs" />
+    <Compile Include="MeasureTextBlock.cs" />
+    <Compile Include="MouseTouchDevice.cs" />
+    <Compile Include="PreviewTextBox\PreviewTextBox.cs" />
+    <Compile Include="PreviewTextBox\PreviewTextChangedEventArgs.cs" />
+    <Compile Include="PreviewTextBox\PreviewTextChangedEventHandler.cs" />
+    <Compile Include="PriceTextBlock.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="PreviewTextBox\TextChangedType.cs" />
+    <Compile Include="PropertyChangeNotifier.cs" />
+    <Compile Include="SlidingGridPage.cs" />
+    <Compile Include="TouchListBox.cs" />
+    <Compile Include="WatermarkTextBox .cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="DropShadowBorder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementFlow\ElementFlow.Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementFlow\InternalResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Q /Y "$(TargetPath)" "C:\scot\ADK\lib\release13"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

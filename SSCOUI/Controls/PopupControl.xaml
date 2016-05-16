@@ -1,0 +1,33 @@
+﻿<UserControl
+    x:Class="SSCOUI.Controls.PopupControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:sscoControls="clr-namespace:SSCOControls;assembly=SSCOControls"
+    mc:Ignorable="d">
+    <Grid>
+        <Canvas
+            Name="PopupBackground"
+            IsHitTestVisible="False"
+            Visibility="Collapsed"
+            Style="{StaticResource popupBackgroundStyleDarken}" />
+        <Rectangle
+            Name="PopupShroud"
+            IsHitTestVisible="False"
+            Width="1024"
+            Height="768"
+            Visibility="Collapsed"
+            Style="{StaticResource popupShroudStyle}" />
+        <Canvas>
+            <Frame
+                Name="PopupFrame"
+                NavigationUIVisibility="Hidden"
+                ContentRendered="PopupFrame_ContentRendered"
+                SizeChanged="PopupFrame_SizeChanged"
+                Opacity="0.0"
+                Navigated="PopupFrame_Navigated"
+                IsTabStop="False" />
+        </Canvas>
+    </Grid>
+</UserControl>

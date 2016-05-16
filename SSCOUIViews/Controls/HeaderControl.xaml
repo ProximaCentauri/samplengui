@@ -1,0 +1,28 @@
+﻿<StackPanel
+    x:Class="SSCOUIViews.Controls.HeaderControl"
+    xmlns:controls="clr-namespace:SSCOControls;assembly=SSCOControls"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    Orientation="Horizontal"
+    Height="114"
+    DataContextChanged="StackPanel_DataContextChanged">
+    <Image
+        Style="{StaticResource logoImageStyle}"
+        Margin="20" />
+    <StackPanel
+        Name="StoreModeHeader"
+        Width="550"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Center">
+        <controls:MeasureTextBlock
+            Name="StoreModeScreenTitle1"
+            Height="50"
+            Style="{StaticResource storeModeHeaderTitleTextStyle}" />
+        <controls:MeasureTextBlock
+            Name="StoreModeScreenTitle2"
+            Height="50"
+            Style="{StaticResource storeModeHeaderTitleTextStyle}" />
+    </StackPanel>
+</StackPanel>

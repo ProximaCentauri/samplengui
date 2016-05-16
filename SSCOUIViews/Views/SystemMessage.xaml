@@ -1,0 +1,147 @@
+﻿<c:BackgroundView
+    x:Class="SSCOUIViews.Views.SystemMessage"
+    xmlns:c="clr-namespace:SSCOUIModels.Controls;assembly=SSCOUIModels"
+    xmlns:controls="clr-namespace:SSCOControls;assembly=SSCOControls"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    mc:Ignorable="d"
+    ShowCart="False">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="86" />
+            </Grid.RowDefinitions>
+            <Grid
+                Margin="20,114,20,32"
+                Grid.Row="0"
+                VerticalAlignment="Top">
+                <Border
+                    Style="{StaticResource glowBorderStyle}"
+                    Width="984"
+                    Height="548" />
+                <Grid
+                    Grid.Row="0"
+                    Visibility="Collapsed"
+                    x:Name="SystemMessageWebGrid"
+                    Margin="24,20,24,20"
+                    Width="936"
+                    Height="508"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+                    <WindowsFormsHost
+                        Background="Transparent">
+                        <WindowsFormsHost.Child>
+                            <wf:WebBrowser
+                                x:Name="SystemMessageWebControl"
+                                IsWebBrowserContextMenuEnabled="False"
+                                ScriptErrorsSuppressed="True" />
+                        </WindowsFormsHost.Child>
+                    </WindowsFormsHost>
+                </Grid>
+                <DockPanel
+                    Grid.Row="0"
+                    x:Name="SystemMessageGrid"
+                    Visibility="Collapsed"
+                    Margin="24,20,24,20"
+                    LastChildFill="False">
+                    <StackPanel
+                        DockPanel.Dock="Top"
+                        Margin="0,0,0,32">
+                        <controls:MeasureTextBlock
+                            Name="TitleLine1"
+                            Style="{StaticResource systemMessageTitleStyle}"
+                            Width="936"
+                            Margin="0,0,0,3"
+                            Visibility="Collapsed"/>
+                        <controls:MeasureTextBlock
+                            Name="TitleLine2"
+                            Style="{StaticResource systemMessageTitleStyle}"
+                            Width="936"
+                            Margin="0,0,0,3"
+                            Visibility="Collapsed"/>
+                        <controls:MeasureTextBlock
+                            Name="TitleLine3"
+                            Style="{StaticResource systemMessageTitleStyle}"
+                            Width="936"
+                            Visibility="Collapsed"/>
+                    </StackPanel>
+                    <DockPanel
+                        DockPanel.Dock="Top"
+                        LastChildFill="False">
+                        <Image
+                            x:Name="SystemMessageImage"
+                            Width="413"
+                            Height="309"
+                            Margin="0,0,24,0"
+                            Style="{StaticResource systemMessageImageStyle}"
+                            Visibility="Collapsed"
+                            DockPanel.Dock="Left"
+                            VerticalAlignment="Top" />
+                        <MediaElement
+                            Width="413"
+                            Height="309"
+                            Margin="0,0,24,0"
+                            x:Name="SystemMessageVideo"
+                            Visibility="Collapsed"
+                            LoadedBehavior="Manual"
+                            MediaEnded="SystemMessageVideo_Ended"
+                            Style="{StaticResource systemMessageVideoStyle}"
+                            MediaFailed="SystemMessage_VideoFailed"
+                            DockPanel.Dock="Left"
+                            VerticalAlignment="Top" />
+                        <controls:FadingScrollViewer
+                            MinWidth="475"
+                            MaxWidth="936"
+                            MinHeight="309"
+                            MaxHeight="387"
+                            DockPanel.Dock="Left"
+                            Margin="0,0,0,20"
+                            x:Name="SystemMessageInstructionArea"
+                            Style="{StaticResource systemMessageFadingScrollViewerStyle}">
+                            <controls:MeasureTextBlock
+                                Text="{Binding Instructions}"
+                                Style="{StaticResource systemMessageInstructionAreaStyle}" />
+                        </controls:FadingScrollViewer>
+                    </DockPanel>
+                </DockPanel>
+            </Grid>
+            <Grid
+                Grid.Row="1"
+                Margin="0,0,20,20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="Auto" />
+                    <ColumnDefinition
+                        Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <controls:ImageButton
+                    x:Name="SystemMessageButton1"
+                    Command="{Binding ActionCommand}"
+                    CommandParameter="CMButton1Med"
+                    Text="{Binding CMButton1MedText}"
+                    Visibility="{Binding CMButton1MedShown, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    IsEnabled="{Binding CMButton1MedEnabled}"
+                    Style="{StaticResource systemMessageButtonWithCheckStyle}"
+                    Grid.Column="0" />
+                <controls:ImageButton
+                    Grid.Column="1"
+                    x:Name="SystemMessageButton2"
+                    Command="{Binding ActionCommand}"
+                    CommandParameter="CMButton2Med"
+                    Text="{Binding CMButton2Med}"
+                    Style="{StaticResource systemMessageButtonStyle}"
+                    Margin="12,0,0,0"
+                    Visibility="{Binding CMButton2MedShown, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    IsEnabled="{Binding CMButton2MedEnabled}" />
+            </Grid>
+        </Grid>
+    </Grid>
+</c:BackgroundView>

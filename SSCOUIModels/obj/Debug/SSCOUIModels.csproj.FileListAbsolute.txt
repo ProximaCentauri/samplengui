@@ -1,0 +1,12 @@
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUI\SSCOUIModels\bin\Debug\SSCOUIModels.dll
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUI\SSCOUIModels\bin\Debug\SSCOUIModels.pdb
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUI\SSCOUIModels\bin\Debug\FPsxWPF.dll
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUI\SSCOUIModels\bin\Debug\RPSWNET.dll
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUI\SSCOUIModels\bin\Debug\SSCOControls.dll
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUI\SSCOUIModels\bin\Debug\CommandProxy.dll
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUI\SSCOUIModels\bin\Debug\PsxNet.dll
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUI\SSCOUIModels\bin\Debug\FPsxWPF.pdb
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUI\SSCOUIModels\bin\Debug\CommandProxy.pdb
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUI\SSCOUIModels\obj\Debug\SSCOUIModels.csprojResolveAssemblyReference.cache
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUI\SSCOUIModels\obj\Debug\SSCOUIModels.dll
+D:\mc185104\projects\nextgen\dev\scot\ADK\NGUIADK602Trunk\NextGenUI\SSCOUIModels\obj\Debug\SSCOUIModels.pdb

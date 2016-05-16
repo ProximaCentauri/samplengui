@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B02876CC-A86F-4F83-8C7A-FC357DECB67A}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SSCOUIModels</RootNamespace>
+    <AssemblyName>SSCOUIModels</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ReferencePath>C:\scot\ADK\lib\release13\</ReferencePath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RPSWNET">
+      <HintPath>..\..\..\..\bin\RPSWNET.dll</HintPath>
+    </Reference>
+    <Reference Include="SSCOControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\release13\SSCOControls.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\ActionCommand.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Controls\BackgroundView.cs" />
+    <Compile Include="Controls\PopupView.cs" />
+    <Compile Include="Controls\SSCOUIElementFlow.cs" />
+    <Compile Include="Controls\SSCOUISlidingGridPage.cs" />
+    <Compile Include="Controls\SSCOUITouchListBox.cs" />
+    <Compile Include="Controls\View.cs" />
+    <Compile Include="Helpers\BooleanAndConverter.cs" />
+    <Compile Include="Helpers\AlphaNumericKeysHandler.cs" />
+    <Compile Include="Helpers\CacheItemImages.cs" />
+    <Compile Include="Helpers\FormatDecimalSeparatorConverter.cs" />
+    <Compile Include="Helpers\StyleConverter.cs" />
+    <Compile Include="Helpers\FormatConverter.cs" />
+    <Compile Include="Helpers\FormatCurrencyConverter.cs" />
+    <Compile Include="Helpers\ItemImageConverter.cs" />
+    <Compile Include="Helpers\StateToBooleanConverter.cs" />
+    <Compile Include="Helpers\PathConverter.cs" />
+    <Compile Include="Helpers\StateToVisibilityConverter.cs" />
+    <Compile Include="Helpers\UIControlFinder.cs" />
+    <Compile Include="Helpers\UIFormat.cs" />
+    <Compile Include="IMainViewModel.cs" />
+    <Compile Include="MainViewModel.cs" />
+    <Compile Include="Models\Context.cs" />
+    <Compile Include="Models\CustomerReceiptItem.cs" />
+    <Compile Include="Models\CustomerReceiptSubItem.cs" />
+    <Compile Include="Models\Property.cs" />
+    <Compile Include="Models\TBStateType.cs" />
+    <Compile Include="Models\UIEchoField.cs" />
+    <Compile Include="Helpers\PerfCheck.cs" />
+    <Compile Include="Models\UIPicklistDisplayLevels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FPsxWPF\FPsxWPF.csproj">
+      <Project>{C979321C-214F-4495-85D1-60D291CAE07D}</Project>
+      <Name>FPsxWPF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Q /Y "$(TargetPath)" "C:\scot\ADK\lib\release13"
+xcopy /Q /Y "$(TargetPath)" "C:\scot\bin"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

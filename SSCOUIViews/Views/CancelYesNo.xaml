@@ -1,0 +1,131 @@
+﻿<c:PopupView
+    x:Class="SSCOUIViews.Views.CancelYesNo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:controls="clr-namespace:SSCOControls;assembly=SSCOControls"
+    mc:Ignorable="d"
+    xmlns:helpers="clr-namespace:SSCOUIModels.Helpers;assembly=SSCOUIModels"
+    xmlns:c="clr-namespace:SSCOUIModels.Controls;assembly=SSCOUIModels"
+    BackgroundType="Shroud"
+    XOffset="273"
+    YOffset="222"
+    Alignment="Center"
+    ControlsToAllowEnabled="AssistanceButton">
+    <c:PopupView.Resources>
+        <helpers:StateToVisibilityConverter
+            x:Key="StateToVisibilityConverter" />
+    </c:PopupView.Resources>
+    <Grid>
+        <controls:DropShadowBorder
+            Style="{StaticResource dropShadowStyle}" />
+        <Grid
+            Name="ConfirmAbortPanel"
+            Width="484"
+            Visibility="{Binding StateParam, Converter={StaticResource StateToVisibilityConverter},ConverterParameter='ConfirmAbort'}">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="Auto" />
+                <RowDefinition
+                    Height="168" />
+            </Grid.RowDefinitions>
+            <Grid
+                Grid.Row="0">
+                <StackPanel
+                    Height="Auto"
+                    Margin="36,36,36,36"
+                    Orientation="Vertical">
+                    <controls:MeasureTextBlock
+                        x:Name="ConfirmAbortLeadthruText"
+                        Style="{StaticResource popUpConfirmAbortVoidTitleTextStyle}"
+                        Margin="0,0,0,18" />
+                    <controls:MeasureTextBlock
+                        Margin="0,10,0,0"
+                        Style="{StaticResource popUpConfirmAbortVoidTextStyle}"
+                        Text="{Loc ConfirmAbortMessage}" />
+                </StackPanel>
+            </Grid>
+            <Grid
+                Grid.Row="1">
+                <StackPanel
+                    Height="168"
+                    Width="412"
+                    Margin="36,0,36,36"
+                    HorizontalAlignment="Center">
+                    <controls:ImageButton
+                        Margin="0,0,0,24"
+                        Command="{Binding ActionCommand}"
+                        CommandParameter="No"
+                        Height="54"
+                        Width="412"
+                        Style="{StaticResource cancelPopUpNoButtonStyle}"
+                        Text="{Loc NoReturn}" />
+                    <controls:ImageButton
+                        Height="54"
+                        Width="412"
+                        Command="{Binding ActionCommand}"
+                        CommandParameter="Yes"
+                        Style="{StaticResource cancelPopUpYesButtonStyle}"
+                        Text="{Loc YesEmpty}" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid
+            Name="ConfirmVoidPanel"
+            Width="472"
+            Visibility="{Binding StateParam, Converter={StaticResource StateToVisibilityConverter},ConverterParameter='ConfirmVoid'}">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="Auto" />
+                <RowDefinition
+                    Height="126" />
+            </Grid.RowDefinitions>
+            <Grid
+                Name="messageInfo"
+                Grid.Row="0">
+                <StackPanel
+                    Height="Auto"
+                    Margin="36,36,36,0"
+                    Orientation="Vertical">
+                    <controls:MeasureTextBlock
+                        x:Name="ConfirmVoidLeadthruText"
+                        Style="{StaticResource popUpConfirmAbortVoidTitleTextStyle}"
+                        Margin="0,0,0,18" />
+                    <controls:MeasureTextBlock
+                        Margin="0,10,0,0"
+                        Style="{StaticResource popUpConfirmAbortVoidTextStyle}"
+                        Text="{Binding Instructions}" />
+                </StackPanel>
+            </Grid>
+            <Grid
+                Name="imageButton"
+                Grid.Row="1">
+                <StackPanel
+                    Orientation="Horizontal"
+                    Height="54"
+                    Width="472"
+                    Margin="36,0,36,36"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Center">
+                    <controls:ImageButton
+                        Margin="36,0,8,0"
+                        Command="{Binding ActionCommand}"
+                        CommandParameter="No"
+                        Height="54"
+                        Width="192"
+                        Style="{StaticResource cancelPopUpNoButtonStyle}"
+                        Text="{Loc NoKeep}" />
+                    <controls:ImageButton
+                        Margin="8,0,0,0"
+                        Height="54"
+                        Width="192"
+                        Command="{Binding ActionCommand}"
+                        CommandParameter="Yes"
+                        Style="{StaticResource cancelPopUpYesButtonStyle}"
+                        Text="{Loc YesRemove}" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</c:PopupView>

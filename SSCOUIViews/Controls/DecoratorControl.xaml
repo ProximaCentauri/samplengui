@@ -1,0 +1,108 @@
+﻿<Grid
+    x:Class="SSCOUIViews.Controls.DecoratorControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:helpers="clr-namespace:SSCOUIModels.Helpers;assembly=SSCOUIModels"
+    xmlns:controls="clr-namespace:SSCOControls;assembly=SSCOControls"
+    xmlns:c="clr-namespace:SSCOUIModels.Controls;assembly=SSCOUIModels"
+    mc:Ignorable="d"
+    Height="768"
+    Width="1024"
+    DataContextChanged="Grid_DataContextChanged">
+    <Grid.Resources>
+        <helpers:StateToVisibilityConverter
+            x:Key="StateToVisibilityConverter" />
+    </Grid.Resources>
+    <Grid
+        Name="attendantModePanel"
+        Visibility="Collapsed">
+        <Border
+            Style="{StaticResource attendantModeBorderStyle}"
+            Height="768"
+            Width="1024" />
+        <Border
+            Style="{StaticResource attendantModeInnerBorderStyle}"
+            Height="768"
+            Width="1024" />
+        <Border
+            x:Name="attendantIcon"
+            Style="{StaticResource attendantModeIconBorderStyle}"
+            MinHeight="92"
+            MaxHeight="110"
+            Width="75">
+            <Grid
+                Style="{StaticResource attendantModeIconBackgroundStyle}"
+                Margin="-1,0,-1,-1">
+                <Image
+                    Panel.ZIndex="1"
+                    Style="{StaticResource attendantModeIconStyle}" 
+                    Margin="0,5,0,0"/>
+                <controls:MeasureTextBlock
+                    Style="{StaticResource attdTrainTextStyle}"
+                    Text="{Loc AttendantMode}" />
+            </Grid>
+        </Border>
+    </Grid>
+    <Grid
+        x:Name="trainingModePanel"
+        Visibility="Collapsed">
+        <Border
+            Style="{StaticResource trainingModeBorderStyle}"
+            Height="768"
+            Width="1024" />
+        <Border
+            Style="{StaticResource trainingModeInnerBorderStyle}"
+            Height="768"
+            Width="1024" />
+        <Border
+            x:Name="trainingIcon"
+            Style="{StaticResource trainingModeIconBorderStyle}"
+            MinHeight="92"
+            MaxHeight="110"
+            Width="72">
+            <Grid
+                Style="{StaticResource trainingModeIconBackgroundStyle}"
+                Margin="-1,0,-1,-1">
+                <Image
+                    Panel.ZIndex="1"
+                    Style="{StaticResource trainingModeIconStyle}" 
+                    Margin="0,5,0,0"/>
+                <controls:MeasureTextBlock
+                    Style="{StaticResource attdTrainTextStyle}"
+                    Text="{Loc TrainingMode}" />
+            </Grid>
+        </Border>
+    </Grid>
+    <Grid
+        x:Name="attendantAndTrainingModePanel"
+        Visibility="Collapsed">
+        <Border
+            Style="{StaticResource trainingModeBorderStyle}"
+            Height="768"
+            Width="1024" />
+        <Border
+            Style="{StaticResource trainingModeInnerBorderStyle}"
+            Height="768"
+            Width="1024" />
+        <Border
+            x:Name="attendantAndTrainingIcon"
+            Style="{StaticResource trainingModeIconBorderStyle}"
+            MinHeight="92"
+            MaxHeight="110"
+            Width="74">
+            <Grid
+                Style="{StaticResource trainingModeIconBackgroundStyle}"
+                Margin="-1,0,-1,-1">
+                <Image
+                    Panel.ZIndex="1"
+                    Style="{StaticResource trainingModeIconStyle}"
+                    Margin="0,3,0,0" />
+                <controls:MeasureTextBlock
+                    Style="{StaticResource attdTrainTextStyle}"
+                    Text="{Loc AttendantTrainingMode}" />
+            </Grid>
+        </Border>
+    </Grid>
+</Grid>

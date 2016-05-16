@@ -1,0 +1,45 @@
+﻿<Window
+    x:Class="SSCOUI.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:c="clr-namespace:SSCOUI.Controls"
+    xmlns:helpers="clr-namespace:SSCOUIModels.Helpers;assembly=SSCOUIModels"
+    xmlns:controls="clr-namespace:SSCOUIViews.Controls;assembly=SSCOUIViews"
+    Style="{StaticResource mainWindowStyle}"
+    Title="NCR NEXTGENUI"
+    Icon="ncr.ico"
+    Left="0"
+    Top="0"
+    Width="1024"
+    Height="768"
+    WindowStyle="None"
+    KeyboardNavigation.TabNavigation="None"
+    KeyboardNavigation.ControlTabNavigation="None"
+    KeyboardNavigation.DirectionalNavigation="None"
+    Loaded="Window_Loaded"
+    ResizeMode="NoResize"
+    Unloaded="Window_UnLoaded">
+    <Window.Resources>
+        <helpers:StateToVisibilityConverter
+            x:Key="StateToVisibilityConverter" />
+    </Window.Resources>
+    <Grid>
+        <c:MainAreaControl
+            x:Name="MainAreaControl"
+            ContentRendered="MainAreaControl_ContentRendered" />
+        <controls:HeaderControl
+            x:Name="HeaderControl"
+            VerticalAlignment="Top" />
+        <controls:SystemFunctionsControl
+            x:Name="SystemFunctionsControl"
+            VerticalAlignment="Bottom" />
+        <controls:CartControl
+            x:Name="CartControl"
+            HorizontalAlignment="Right" />
+        <controls:DecoratorControl
+            x:Name="DecoratorControl"
+            Panel.ZIndex="102" />
+        <c:PopupControl
+            x:Name="PopupControl" />
+    </Grid>
+</Window> 

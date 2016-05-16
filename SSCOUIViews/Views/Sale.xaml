@@ -1,0 +1,328 @@
+﻿<c:BackgroundView
+    x:Class="SSCOUIViews.Views.Sale"
+    xmlns:controls="clr-namespace:SSCOControls;assembly=SSCOControls"
+    xmlns:c="clr-namespace:SSCOUIModels.Controls;assembly=SSCOUIModels"
+    xmlns:helpers="clr-namespace:SSCOUIModels.Helpers;assembly=SSCOUIModels"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:viewsControls="clr-namespace:SSCOUIViews.Controls"
+    mc:Ignorable="d">
+    <c:View.Resources>
+        <helpers:StateToVisibilityConverter
+            x:Key="StateToVisibilityConverter" />
+    </c:View.Resources>
+    <Grid
+        Margin="0,114,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+                Width="687" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="Auto" />
+            <RowDefinition
+                Height="Auto" />
+            <RowDefinition
+                Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.Clip>
+            <RectangleGeometry
+                Rect="0,0,687,768" />
+        </Grid.Clip>
+
+        <Grid
+            Name="CardPanel"
+            Height="458">
+            <c:SSCOUIElementFlow
+                Name="FilmstripPanel"
+                Visibility="Collapsed"
+                ElementWidth="644"
+                ElementHeight="458"
+                ItemGap="0.25"
+                PopoutDistance="0.3"
+                IsSynchronizedWithCurrentItem="True">
+                <c:SSCOUIElementFlow.Camera>
+                    <PerspectiveCamera
+                        Position="0,0,1.2"
+                        LookDirection="0,0,-1"
+                        FieldOfView="70" />
+                </c:SSCOUIElementFlow.Camera>
+                <c:SSCOUIElementFlow.ItemTemplate>
+                    <DataTemplate>
+                        <viewsControls:Card />
+                    </DataTemplate>
+                </c:SSCOUIElementFlow.ItemTemplate>
+            </c:SSCOUIElementFlow>
+            <Grid
+                Name="SingleCardPanel">
+                <viewsControls:Card
+                    DataContext="{Binding CustomerReceipt/}" />
+            </Grid>
+        </Grid>
+
+        <Grid
+            Name="NoItemsPanel"
+            Width="644"
+            Height="458"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="184" />
+                <RowDefinition
+                    Height="*" />
+            </Grid.RowDefinitions>
+            <Border
+                Grid.RowSpan="2"
+                Style="{StaticResource glowBorderStyle}" />
+            <controls:MeasureTextBlock
+                Margin="10,36,10,0"
+                Text="{Loc ScanAndBag}"
+                Visibility="{Binding ElementName=NoItemsPanel, Path=Visibility}"
+                Style="{StaticResource scanAndBagTextStyle}" />
+            <Grid
+                Grid.Row="1"
+                Margin="0,0,0,24"
+                Grid.RowSpan="2"
+                VerticalAlignment="Bottom">
+                <controls:AnimationControl
+                    Name="NoItemsContent"
+                    Style="{StaticResource can-scanAnimationControlStyle}" />
+                <controls:AnimationControl
+                    Name="QuickPickNoItemsContent"
+                    Visibility="Collapsed"
+                    Style="{StaticResource quickPickcan-scanAnimationControlStyle}" />
+            </Grid>
+            <Grid
+                Grid.Row="1"
+                Name="CardMessagePanel"
+                VerticalAlignment="Bottom"
+                Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="235" />
+                    <ColumnDefinition
+                        Width="409" />
+                </Grid.ColumnDefinitions>
+                <Grid
+                    Grid.Column="1">
+                    <viewsControls:CardMessage
+                        x:Name="CardMessage" />
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <Grid
+            Name="EnterCouponsPanel"
+            Width="644"
+            Height="482"
+            Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+                    Width="322" />
+                <ColumnDefinition
+                    Width="322" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="120" />
+                <RowDefinition
+                    Height="250" />
+                <RowDefinition
+                    Height="112" />
+            </Grid.RowDefinitions>
+            <Border
+                Grid.RowSpan="3"
+                Grid.ColumnSpan="2"
+                Style="{StaticResource glowBorderStyle}"
+                Width="644"
+                Height="482" />
+            <controls:MeasureTextBlock
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                Name="LeadthruText"
+                Text="{Loc ScanCoupon}"
+                Margin="24,24,0,0"
+                Style="{StaticResource tenderTextStyle}"
+                Height="92" />
+            <controls:MeasureTextBlock
+                Grid.Row="1"
+                Grid.Column="0"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Center"              
+                Margin="34,0,0,0"
+                Text="{Binding ScanBagTextArea}"
+                Style="{StaticResource loyaltyTextStyle}"
+                Visibility="{Binding StateParam, Converter={StaticResource StateToVisibilityConverter}, ConverterParameter='EnterCoupons'}"
+                Width="250" />
+            <controls:AnimationControl
+                Grid.Row="1"
+                Grid.Column="1"
+                Style="{StaticResource scanCardPaymentAnimationControlStyle}"
+                Visibility="{Binding BackgroundStateParam, Converter={StaticResource StateToVisibilityConverter}, ConverterParameter='EnterCoupons'}"
+                Width="250"
+                Margin="0,0,24,0" />
+            <StackPanel
+                Orientation="Horizontal"
+                Margin="24,0,24,24"
+                Grid.Row="2"
+                Grid.ColumnSpan="2"
+                Height="56"
+                Width="536"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Center"
+                Visibility="{Binding BackgroundStateParam, Converter={StaticResource StateToVisibilityConverter}, ConverterParameter='EnterCoupons'}">
+                <controls:ImageButton
+                    Name="Continue"
+                    Command="{Binding ActionCommand}"
+                    CommandParameter="CannotScanCoupon"
+                    Width="258"
+                    Height="56"
+                    Margin="0,0,10,0"
+                    Style="{StaticResource enterCouponButtonStyle}"
+                    Visibility="Visible"
+                    Text="{Loc CantScanCoupon}" />
+                <controls:ImageButton
+                    Name="CancelCoupon"
+                    TouchDown="CancelCoupon_TouchDown"
+                    Width="258"
+                    Height="56"
+                    Style="{StaticResource enterCouponButtonStyle}"
+                    Margin="10,0,0,0"
+                    Visibility="Visible"
+                    Text="{Loc CancelCoupons}" />
+            </StackPanel>
+        </Grid>
+
+        <!-- Scan Item status container-->
+        <Grid
+            Name="scanItemStatus"
+            Grid.Row="1"
+            Margin="20,12,20,0"
+            Width="644"
+            Style="{StaticResource statusContainerStyle}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+                    Width="Auto" />
+                <ColumnDefinition
+                    Width="2*" />
+                <ColumnDefinition
+                    Width="*" />
+                <ColumnDefinition
+                    Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="12" />
+                <RowDefinition
+                    Height="68" />
+            </Grid.RowDefinitions>
+            <Rectangle
+                Grid.ColumnSpan="4"
+                Style="{StaticResource trilightInterventionRectangleStyle}" />
+            <controls:MeasureTextBlock
+                Name="ScanItemTextBlock"
+                Grid.Column="0"                
+                Grid.Row="1"   
+                Height="52"
+                MaxWidth="300"
+                Style="{StaticResource statusTextStyle}"
+                Text="{Loc ScanNextItem}"
+                Grid.ColumnSpan="3"
+                Margin="16,0,0,0" />
+            <controls:ImageButton
+                Name="scanItemSearchKeyInItem"
+                Grid.Column="3"
+                Grid.Row="1"
+                Margin="0,0,12,0"
+                Command="{Binding ActionCommand}"
+                CommandParameter="SearchKeyInItem"
+                Style="{StaticResource searchScanButtonStyle}"
+                Text="{Loc SearchKeyInItem}"
+                Width="310"
+                Height="52" />
+        </Grid>
+
+        <!--SkipBagging status container -->
+        <Grid
+            Name="skipBagging"
+            Grid.Row="1"
+            Margin="20,12,20,0"
+            Style="{StaticResource statusContainerStyle}"
+            Width="644"
+            Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+                    Width="*" />
+                <ColumnDefinition
+                    Width="3*" />
+                <ColumnDefinition
+                    Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="12" />
+                <RowDefinition
+                    Height="68" />
+            </Grid.RowDefinitions>
+            <Rectangle
+                Grid.ColumnSpan="3"
+                Style="{StaticResource trilightInterventionRectangleStyle}" />
+            <controls:MeasureTextBlock
+                Name="skipBaggingText"
+                Grid.Column="0"
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                Margin="16,0,0,0"
+                Style="{StaticResource statusTextStyle}" />
+            <controls:ImageButton
+                Name="skipBaggingButton"
+                Grid.Column="2"
+                Grid.Row="1"
+                Margin="0,0,12,0"
+                Command="{Binding ActionCommand}"
+                CommandParameter="SkipBagging"
+                Style="{StaticResource skipBaggingButtonStyle}"
+                Text="{Loc SkipBagging}"
+                Height="52"
+                Width="200" />
+        </Grid>
+
+        <!--QuickPick list items -->
+        <Grid
+            Name="QuickPickListPanel"
+            Grid.Row="2"
+            Margin="20,12,20,0"
+            Width="647"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Height="150"
+            Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="35" />
+                <RowDefinition
+                    Height="114" />
+            </Grid.RowDefinitions>
+            <controls:PageIndicator
+                x:Name="pageIndicator"
+                Grid.Row="0"
+                Height="20"
+                Style="{StaticResource pageIndicatorStyle}" />
+            <c:SSCOUISlidingGridPage
+                Name="QuickPickItemList"
+                Grid.Row="2"
+                SelectionMode="Single"
+                Style="{StaticResource quickpickItemListBoxStyle}"
+                GridItemsSource="{Binding QuickPickItems}"
+                PageIndicatorControl="{Binding ElementName=pageIndicator}"
+                SelectionChanged="QuickPickList_SelectionChanged"
+                Width="660"
+                Height="114" />
+        </Grid>
+    </Grid>
+</c:BackgroundView>

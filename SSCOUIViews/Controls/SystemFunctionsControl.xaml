@@ -1,0 +1,94 @@
+﻿<Grid
+    x:Class="SSCOUIViews.Controls.SystemFunctionsControl"
+    xmlns:controls="clr-namespace:SSCOControls;assembly=SSCOControls"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    mc:Ignorable="d"
+    DataContextChanged="Grid_DataContextChanged"
+    xmlns:helpers="clr-namespace:SSCOUIModels.Helpers;assembly=SSCOUIModels"
+    VerticalAlignment="Bottom"
+    Height="100">
+    <Grid.Resources>
+        <BooleanToVisibilityConverter
+            x:Key="BooleanToVisibilityConverter" />
+    </Grid.Resources>
+
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition
+            Width="440" />
+        <ColumnDefinition
+            Width="254" />
+    </Grid.ColumnDefinitions>
+    <StackPanel
+        Name="SystemFunctions"
+        Grid.Column="0"
+        Orientation="Horizontal"
+        Margin="0,0,0,10">
+        <controls:ImageButton
+            Name="StoreButton8"
+            Style="{StaticResource storeModeButtonGoBackStyle}"            
+            Margin="20,0,0,10"            
+            VerticalAlignment="Bottom"
+            Width="Auto"
+            MaxWidth="460"
+            Visibility="Collapsed"
+            Padding="10,5,10,5"
+            TouchDown="StoreButton8_TouchDown"/>
+        <controls:ImageButton
+            Name="AssistanceButton"
+            Command="{Binding ActionCommand}"
+            CommandParameter="Assistance"
+            Style="{StaticResource assistanceSystemButtonStyle}"
+            Text="{Loc Assistance}"
+            Margin="10,10,0,0"/>
+        <controls:ImageButton
+            Name="LanguageButton"
+            Style="{StaticResource languageSystemButtonStyle}"
+            Command="{Binding ActionCommand}"
+            CommandParameter="Language"
+            Margin="0,10,0,0" />
+        <controls:ImageButton
+            Name="VolumeButton"
+            Style="{StaticResource volumeSystemButtonStyle}"
+            Text="{Loc Volume}"
+            IsEnabled="{Binding VolumeShown}"
+            Margin="0,10,0,0"
+            Click="VolumeButton_Click" />
+        <controls:ImageButton
+            Name="OwnBagButton"
+            Style="{StaticResource ownBagSystemButtonStyle}"
+            Command="{Binding ActionCommand}"
+            CommandParameter="OwnBag"
+            Text="{Loc OwnBag}"
+            Margin="0,10,0,0" />
+    </StackPanel>
+    <StackPanel
+        Grid.Column="1"
+        VerticalAlignment="Top"
+        Margin="0,10,20,4"
+        HorizontalAlignment="Right"
+        x:Name="WeightDetailsPanel">
+        <controls:MeasureTextBlock
+            Name="WeightTextBlock"
+            Style="{StaticResource weightTextStyle}" />
+        <StackPanel
+            Orientation="Horizontal"
+            HorizontalAlignment="Right">
+            <controls:MeasureTextBlock
+                Panel.ZIndex="1"
+                Style="{StaticResource measuresImageLabelStyle}"
+                Width="185">
+              <Run Text="{Loc NCRCorp}" />
+              <Image
+                    Name="ScaleLogo"
+                    Style="{StaticResource scaleLogoStyle}" />
+                <Run
+                    Name="ScaleInfo" />
+            </controls:MeasureTextBlock>
+        </StackPanel>
+    </StackPanel>
+</Grid>
+
+

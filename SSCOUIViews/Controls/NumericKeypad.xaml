@@ -1,0 +1,192 @@
+﻿<Grid
+    x:Class="SSCOUIViews.Controls.NumericKeypad"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    mc:Ignorable="d"
+    xmlns:controls="clr-namespace:SSCOControls;assembly=SSCOControls"
+    xmlns:helpers="clr-namespace:SSCOUIModels.Helpers;assembly=SSCOUIModels"
+    DataContextChanged="Grid_DataContextChanged"
+    Loaded="NumericKeypad_Loaded">
+    <Grid.Resources>
+        <helpers:FormatCurrencyConverter
+            x:Key="FormatCurrencyConverter" />
+    </Grid.Resources>
+    <Grid
+        Name="MainKeypadGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="64" />
+            <RowDefinition
+                Height="Auto" />
+        </Grid.RowDefinitions>
+        <Border
+            Name="WaterMarkTextBoxBorder"
+            Style="{StaticResource popupTextBoxBorderStyle}"
+            Margin="5,0,5,5"
+            Height="54"
+            Width="236"
+            HorizontalAlignment="Left">
+            <Border
+                Style="{StaticResource popupTextBoxInnerShadowStyle}">
+                <Grid>
+                    <controls:DropShadowBorder
+                        Style="{DynamicResource dropShadowStyle}"
+                        IsPopup="false" />
+                    <controls:WatermarkTextBox
+                        x:Name="InputTextBox"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Padding="12,0,0,0"
+                        Height="54"
+                        Width="236"
+                        KeyDown="InputTextBox_KeyDown"
+                        Style="{StaticResource numericTextBoxStyle}"
+                        TextChanged="InputTextBox_TextChanged"
+                        MaxLength="{Binding UIEchoField.MaxLength}"
+                        UndoLimit="0"
+                        KeyboardFocus="True"
+                        Focusable="False"/>
+                </Grid>
+            </Border>
+        </Border>
+        <Grid
+            Name="KeypadGrid"
+            Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="64" />
+                <RowDefinition
+                    Height="64" />
+                <RowDefinition
+                    Height="64" />
+                <RowDefinition
+                    Height="*" />
+            </Grid.RowDefinitions>
+            <UniformGrid
+                x:Name="firstRow"
+                Grid.Row="2"                
+                Columns="3">
+                <controls:ImageButton
+                    Text="1"
+                    Width="72"
+                    Height="54"
+                    Click="KeyboardButton_Click"
+                    Style="{StaticResource mainButtonStyle}"
+                    Margin="5" />
+                <controls:ImageButton
+                    Text="2"
+                    Grid.Column="1"
+                    Click="KeyboardButton_Click"
+                    Style="{StaticResource mainButtonStyle}"
+                    Margin="5" />
+                <controls:ImageButton
+                    Text="3"
+                    Grid.Column="2"
+                    Click="KeyboardButton_Click"
+                    Style="{StaticResource mainButtonStyle}"
+                    Margin="5" />
+            </UniformGrid>
+            <UniformGrid
+                x:Name="thirdRow"
+                Grid.Row="0"
+                Columns="3"
+                Grid.Column="0">
+                <controls:ImageButton
+                    Text="7"
+                    Grid.Column="0"
+                    Click="KeyboardButton_Click"
+                    Style="{StaticResource mainButtonStyle}"
+                    Margin="5" />
+                <controls:ImageButton
+                    Text="8"
+                    Grid.Column="1"
+                    Click="KeyboardButton_Click"
+                    Style="{StaticResource mainButtonStyle}"
+                    Margin="5" />
+                <controls:ImageButton
+                    Text="9"
+                    Grid.Column="2"
+                    Click="KeyboardButton_Click"
+                    Style="{StaticResource mainButtonStyle}"
+                    Margin="5" />
+            </UniformGrid>
+            <UniformGrid
+                x:Name="secondRow"
+                Grid.Row="1"
+                Columns="3">
+                <controls:ImageButton
+                    Text="4"
+                    Grid.Column="0"
+                    Click="KeyboardButton_Click"
+                    Style="{StaticResource mainButtonStyle}"
+                    Margin="5" />
+                <controls:ImageButton
+                    Text="5"
+                    Grid.Column="1"
+                    Click="KeyboardButton_Click"
+                    Style="{StaticResource mainButtonStyle}"
+                    Margin="5" />
+                <controls:ImageButton
+                    Text="6"
+                    Grid.Column="2"
+                    Click="KeyboardButton_Click"
+                    Style="{StaticResource mainButtonStyle}"
+                    Margin="5" />
+            </UniformGrid>
+            <WrapPanel
+                Grid.Row="3"
+                Name="lastRow"
+                Width="246">
+                <controls:ImageButton
+                    Name="BackspaceButton"
+                    Width="72"
+                    Height="54"
+                    Grid.Column="0"
+                    Margin="5"
+                    Command="{Binding ActionCommand}"
+                    Style="{StaticResource backSpaceButtonStyle}"
+                    IsEnabled="False"
+                    Click="KeyboardButton_Click"
+                    CommandParameter="BackSpace" />
+                <controls:ImageButton
+                    Text="0"
+                    Name="KeypadButton0"
+                    Grid.Column="1"
+                    Click="KeyboardButton_Click"
+                    Style="{StaticResource mainButtonStyle}"
+                    Margin="5" />
+                <controls:ImageButton
+                    Name="DecimalMarkKey"
+                    Text="."
+                    Grid.Column="2"
+                    Width="65"
+                    Height="54"
+                    Click="KeyboardButton_Click"
+                    Style="{StaticResource mainButtonStyle}"
+                    Margin="5"
+                    Visibility="Collapsed" />
+                <controls:ImageButton
+                    Name="MinusKey"
+                    Text="-"
+                    Grid.Column="2"
+                    Width="65"
+                    Height="54"
+                    Click="KeyboardButton_Click"
+                    Style="{StaticResource mainButtonStyle}"
+                    Margin="5"
+                    Visibility="Collapsed" />
+                <controls:ImageButton
+                    Name="OKButton"                    
+                    Width="72"
+                    Height="54"
+                    Style="{StaticResource numericOkButtonStyle}"
+                    IsEnabled="False"
+                    Margin="5"
+                    Command="{Binding ActionCommand}"
+                    TouchUp="OKButton_TouchUp" />                
+            </WrapPanel>
+        </Grid>
+    </Grid>
+</Grid>

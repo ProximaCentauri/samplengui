@@ -1,0 +1,67 @@
+﻿<Grid
+    x:Class="SSCOUIViews.Controls.CurrencyCylinder"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    mc:Ignorable="d"
+    xmlns:helpers="clr-namespace:SSCOUIModels.Helpers;assembly=SSCOUIModels"
+    xmlns:controls="clr-namespace:SSCOControls;assembly=SSCOControls"
+    DataContextChanged="Grid_DataContextChanged"
+    Name="CylinderControl">
+    <Border
+        Name="CylinderHighlight"
+        Visibility="Hidden"
+        Style="{StaticResource cashManagementHighlightedCylinderBorderStyle}">
+    </Border>
+    <StackPanel>
+        <controls:MeasureTextBlock
+            Name="CylinderChangeInValue"
+            Style="{StaticResource cashManagementValueChangeStyle}" />
+        <controls:MeasureTextBlock
+            Name="CylinderChangeInCount"
+            Style="{StaticResource cashManagementCountChangeStyle}" />
+        <controls:MeasureTextBlock
+            Name="CylinderInfo"
+            Margin="0,5,0,0"
+            HorizontalAlignment="Center"
+            Style="{StaticResource cashManagementNonDispenseDescriptionStyle}" />
+        <controls:ImageButton
+            Name="CylinderBody"
+            IsEnabled="False"
+            TouchDown="CylinderBody_TouchDown"
+            Style="{StaticResource cashManagementCylinderBodyStyle}">
+            <controls:MeasureTextBlock
+                Name="CylinderFill"
+                Height="0"
+                Style="{StaticResource cashManagementGenericCylinderStyle}" />
+        </controls:ImageButton>
+        <controls:MeasureTextBlock
+            Name="CylinderDenomination"
+            Style="{StaticResource cashManagementCylinderDenominationStyle}" />
+    </StackPanel>
+    <Line
+        Name="CylinderBaseLevel"
+        Style="{StaticResource cashManagementBaseLevelLineStyle}" />
+    <StackPanel
+        Name="CylinderValues"
+        TouchDown="CylinderValues_TouchDown"
+        Style="{StaticResource cashManagementGenericValuesStyle}" >
+        <controls:MeasureTextBlock
+            Name="CylinderCurrentPercentage"
+            Style="{StaticResource cashManagementGenericCurrentValuesStyle}" />
+        <controls:MeasureTextBlock
+            Name="CylinderCurrentValue"
+            Style="{StaticResource cashManagementGenericCurrentValuesStyle}" />
+        <controls:MeasureTextBlock
+            Name="CylinderCurrentCount"
+            Style="{StaticResource cashManagementGenericCurrentValuesStyle}" />
+        <controls:MeasureTextBlock
+            Name="CylinderLoaderValue"
+            Margin="0,10,0,0"
+            Style="{StaticResource cashManagementLoaderValuesStyle}" />
+        <controls:MeasureTextBlock
+            Name="CylinderLoaderCount"
+            Style="{StaticResource cashManagementLoaderValuesStyle}" />
+    </StackPanel>
+</Grid>

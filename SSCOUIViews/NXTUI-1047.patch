@@ -1,0 +1,44 @@
+Index: Controls/CartControl.xaml
+===================================================================
+--- Controls/CartControl.xaml	(revision 40490)
++++ Controls/CartControl.xaml	(working copy)
+@@ -117,7 +117,8 @@
+         ItemsSource="{Binding CustomerReceipt}"
+         Style="{StaticResource cartReceiptStyle}"
+         Loaded="CartReceipt_Loaded"
+-        AutoScrollIntoView="Bottom">
++        AutoScrollIntoView="Bottom"
++        SelectionChanged="CartReceipt_SelectionChanged">
+         <c:SSCOUITouchListBox.ItemTemplate>
+             <DataTemplate>
+                 <StackPanel>
+Index: Controls/CartControl.xaml.cs
+===================================================================
+--- Controls/CartControl.xaml.cs	(revision 40490)
++++ Controls/CartControl.xaml.cs	(working copy)
+@@ -644,6 +644,25 @@
+             }
+         }
+ 
++        private void CartReceipt_SelectionChanged(object sender, SelectionChangedEventArgs e)
++        {
++            if (viewModel.StoreMode)                
++            {
++                if (e.RemovedItems.Count != 0 && e.RemovedItems[0] != CartReceipt.SelectedValue)
++                {
++                    var item = CartReceipt.Items[CartReceipt.SelectedIndex < 0 ? 0 : CartReceipt.SelectedIndex] as CustomerReceiptItem;
++                    if (!item.Voidable)
++                    {
++                        CartReceipt.SelectedValue = e.RemovedItems[0];
++                    }
++                }
++                else if (e.RemovedItems.Count == 0 && !(CartReceipt.SelectedValue as CustomerReceiptItem).Voidable)
++                {
++                    CartReceipt.SelectedValue = null;
++                }
++            }
++        }        
++
+         /// <summary>
+         /// viewModel variable
+         /// </summary>

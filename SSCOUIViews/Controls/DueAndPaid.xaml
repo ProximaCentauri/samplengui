@@ -1,0 +1,20 @@
+﻿<StackPanel
+    x:Class="SSCOUIViews.Controls.DueAndPaid"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:controls="clr-namespace:SSCOControls;assembly=SSCOControls"
+    Orientation="Horizontal"
+    Loaded="DueAndPaid_Loaded"
+    Unloaded="DueAndPaid_Unloaded">
+    <controls:MeasureTextBlock
+        Name="AmountDueText"
+        Margin="24,0,0,0"
+        Style="{StaticResource tenderAmountDueTextStyle}" />
+    <controls:MeasureTextBlock
+        Name="AmountPaidText"
+        Margin="24,0,0,0"  
+        Height="30"
+        Style="{StaticResource tenderAmountPaidTextStyle}" />    
+</StackPanel>
